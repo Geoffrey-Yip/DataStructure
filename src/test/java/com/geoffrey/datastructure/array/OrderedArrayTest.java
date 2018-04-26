@@ -1,18 +1,18 @@
 package com.geoffrey.datastructure.array;
 
+import com.geoffrey.datastructure.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Optional;
-import java.util.Random;
 
 /**
  * @author Geoffrey.Yip
  * @date 2018/4/23 23:10
  * @since 有序数组测试
  */
-public class OrderedArrayTest {
+public class OrderedArrayTest extends BaseTest {
 
     @Test
     public void testSize() {
@@ -83,13 +83,4 @@ public class OrderedArrayTest {
         array.find(252);
     }
 
-
-    private long[] randomArray(int size) {
-        long[] randomArray = new long[size];
-        for (int i = 0; i < randomArray.length; i++) {
-            randomArray[i] = new Random().nextInt(500);
-        }
-        System.out.println("Random Array ：" + Arrays.toString(randomArray));
-        return randomArray;
-    }
 }

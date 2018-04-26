@@ -83,6 +83,15 @@ public abstract class AbstractArray {
         return this.nextElem;
     }
 
+    /**
+     * 获取数组容量
+     *
+     * @return 数组容量
+     */
+    public int length() {
+        return this.array.length;
+    }
+
 
     /**
      * 显示数组详情

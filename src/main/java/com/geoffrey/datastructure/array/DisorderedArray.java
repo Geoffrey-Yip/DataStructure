@@ -15,11 +15,30 @@ public class DisorderedArray extends AbstractArray implements BubbleSort {
         super(size);
     }
 
+    /**
+     * 获取数组值
+     *
+     * @param index 索引
+     * @return 数组值
+     */
     public long get(Integer index) {
         if (index >= nextElem) {
             throw new ArrayIndexOutOfBoundsException(index);
         }
         return this.array[index];
+    }
+
+    /**
+     * 设置数组的值
+     *
+     * @param index 索引
+     * @param value 数组的值
+     */
+    public void set(Integer index, long value) {
+        if (index > this.array.length) {
+            throw new IndexOutOfBoundsException("索引太大");
+        }
+        this.array[index] = value;
     }
 
     @Override
@@ -43,6 +62,6 @@ public class DisorderedArray extends AbstractArray implements BubbleSort {
 
     @Override
     public void sort() {
-        this.doSort(this.array);
+        this.doSort(this);
     }
 }

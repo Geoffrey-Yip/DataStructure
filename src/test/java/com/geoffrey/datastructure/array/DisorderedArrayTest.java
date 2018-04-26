@@ -1,10 +1,8 @@
 package com.geoffrey.datastructure.array;
 
+import com.geoffrey.datastructure.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.Random;
 
 /**
  * @author Geoffrey.Yip
@@ -12,7 +10,7 @@ import java.util.Random;
  * @since 无序数组测试
  */
 
-public class DisorderedArrayTest {
+public class DisorderedArrayTest extends BaseTest {
 
     @Test
     public void testInsertAndFind() {
@@ -29,15 +27,5 @@ public class DisorderedArrayTest {
             //Assert insert order is unchance.
             Assert.assertEquals(randomArray[i],array.get(i));
         }
-    }
-
-
-    private long[] randomArray(int size) {
-        long[] randomArray = new long[size];
-        for (int i = 0; i < randomArray.length; i++) {
-            randomArray[i] = new Random().nextInt(500);
-        }
-        System.out.println("Random Array ：" + Arrays.toString(randomArray));
-        return randomArray;
     }
 }
