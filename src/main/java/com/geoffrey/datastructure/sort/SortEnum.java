@@ -1,6 +1,7 @@
 package com.geoffrey.datastructure.sort;
 
 import com.geoffrey.datastructure.sort.impl.BubbleSort;
+import com.geoffrey.datastructure.sort.impl.InsertionSort;
 import com.geoffrey.datastructure.sort.impl.SelectionSort;
 
 /**
@@ -12,7 +13,9 @@ public enum SortEnum {
     /**冒泡排序**/
     BUBBLE(new BubbleSort()),
     /**选择排序**/
-    SELECTION(new SelectionSort())
+    SELECTION(new SelectionSort()),
+    /**插入排序**/
+    INSERTION(new InsertionSort())
     ;
 
     private Sort sort;
