@@ -6,36 +6,21 @@ import com.geoffrey.datastructure.sort.Sort;
 /**
  * @author Geoffrey.Yip
  * @date 2018/4/26 21:54
- * @since 冒泡排序 算法复杂度：O(N²)
+ * @since 冒泡排序 比较次数：O(N²) 交换次数：O(N²) 算法复杂度：O(N²)
  */
 public class BubbleSort implements Sort {
 
-    /**
-     * 冒泡排序实现
-     *
-     * @param array 排序的数组
-     */
     @Override
     public void doSort(DisorderedArray array) {
-        for (int i = array.size() - 1; i > 1; i--) {
-            for (int j = 0; j < i; j++) {
-                if (array.get(j) > array.get(j + 1)) {
-                    swap(array, j, j + 1);
+        //外圈循环一次就有一个大的值有序排到后面，所以外圈是从右往左缩减
+        for (int out = array.size() - 1; out > 1; out--) {
+            //内圈每次都从头开始
+            for (int in = 0; in < out; in++) {
+                //发现左边比右边大时则交换位置
+                if (array.get(in) > array.get(in + 1)) {
+                    swap(array, in, in + 1);
                 }
             }
         }
-    }
-
-    /**
-     * 交换索引对应值的位置
-     *
-     * @param array       数组
-     * @param beforeIndex 第一个索引
-     * @param afterIndex  第二个索引
-     */
-    private void swap(DisorderedArray array, int beforeIndex, int afterIndex) {
-        long temp = array.get(beforeIndex);
-        array.set(beforeIndex, array.get(afterIndex));
-        array.set(afterIndex, temp);
     }
 }
