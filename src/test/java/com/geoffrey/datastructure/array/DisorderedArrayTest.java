@@ -1,6 +1,7 @@
 package com.geoffrey.datastructure.array;
 
 import com.geoffrey.datastructure.BaseTest;
+import com.geoffrey.datastructure.sort.SortEnum;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,7 +16,7 @@ public class DisorderedArrayTest extends BaseTest {
     @Test
     public void testInsertAndFind() {
         long[] randomArray = randomArray(5);
-        DisorderedArray array = new DisorderedArray(10);
+        DisorderedArray array = new DisorderedArray(10,SortEnum.BUBBLE.getImplement());
 
         for (int i = 0; i < randomArray.length; i++) {
             array.insert(randomArray[i]);

@@ -1,6 +1,6 @@
 package com.geoffrey.datastructure.array;
 
-import com.geoffrey.datastructure.sort.BubbleSort;
+import com.geoffrey.datastructure.sort.Sort;
 
 import java.util.Optional;
 
@@ -9,10 +9,14 @@ import java.util.Optional;
  * @date 2018/4/26 21:29
  * @since 无序数组
  */
-public class DisorderedArray extends AbstractArray implements BubbleSort {
+public class DisorderedArray extends AbstractArray  {
 
-    public DisorderedArray(Integer size) {
+    /**选择的排序方法**/
+    private Sort sort;
+
+    public DisorderedArray(Integer size, Sort sort) {
         super(size);
+        this.sort = sort;
     }
 
     /**
@@ -62,6 +66,6 @@ public class DisorderedArray extends AbstractArray implements BubbleSort {
 
     @Override
     public void sort() {
-        this.doSort(this);
+        this.sort.doSort(this);
     }
 }

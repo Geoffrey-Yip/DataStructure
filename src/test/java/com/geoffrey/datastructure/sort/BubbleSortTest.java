@@ -14,7 +14,7 @@ public class BubbleSortTest extends BaseTest {
 
     @Test
     public void testSort() {
-        DisorderedArray array = new DisorderedArray(10);
+        DisorderedArray array = new DisorderedArray(10,SortEnum.BUBBLE.getImplement());
         //random array
         super.fillRandomArrayValue(array);
         //sort
