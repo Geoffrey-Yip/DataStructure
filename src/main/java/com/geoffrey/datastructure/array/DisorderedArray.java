@@ -1,5 +1,7 @@
 package com.geoffrey.datastructure.array;
 
+import com.geoffrey.datastructure.sort.BubbleSort;
+
 import java.util.Optional;
 
 /**
@@ -7,7 +9,7 @@ import java.util.Optional;
  * @date 2018/4/26 21:29
  * @since 无序数组
  */
-public class DisorderedArray extends AbstractArray {
+public class DisorderedArray extends AbstractArray implements BubbleSort {
 
     public DisorderedArray(Integer size) {
         super(size);
@@ -37,5 +39,10 @@ public class DisorderedArray extends AbstractArray {
         }
         this.array[nextElem] = insertValue;
         this.nextElem++;
+    }
+
+    @Override
+    public void sort() {
+        this.doSort(this.array);
     }
 }

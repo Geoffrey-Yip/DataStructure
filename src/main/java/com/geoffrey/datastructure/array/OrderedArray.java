@@ -76,4 +76,9 @@ public class OrderedArray extends AbstractArray {
         System.out.println("insert value :" + insertValue);
         this.display();
     }
+
+    @Override
+    public void sort() {
+        //empty method
+    }
 }

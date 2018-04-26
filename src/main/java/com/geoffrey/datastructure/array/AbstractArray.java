@@ -34,6 +34,11 @@ public abstract class AbstractArray {
      */
     public abstract void insert(long insertValue);
 
+    /**
+     * 排序
+     */
+    public abstract void sort();
+
 
     /**
      * 删除值
