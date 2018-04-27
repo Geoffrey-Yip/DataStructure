@@ -14,43 +14,43 @@ import java.util.Arrays;
  */
 public class ArrayStackTest extends BaseTest {
 
-    private static final int TEST_STACK_SIZE = 10;
+    private static final int STACK_SIZE = 10;
 
 
     @Test
     public void testPushAndPop() {
-        Stack<Long> stack = new ArrayStack(TEST_STACK_SIZE);
-        long[] randomArray = super.randomArray(TEST_STACK_SIZE);
+        Stack<Long> stack = new ArrayStack(STACK_SIZE);
+        long[] randomArray = super.randomArray(STACK_SIZE);
         //push
         Arrays.stream(randomArray).forEach(stack::push);
         //display
         System.out.println(stack.toString());
         //assert push successfully
-        Assert.assertEquals(stack.size(), TEST_STACK_SIZE);
+        Assert.assertEquals(stack.size(), STACK_SIZE);
 
         //断言后进先出
-        for (int out = TEST_STACK_SIZE - 1; out >= 0; out--) {
+        for (int out = STACK_SIZE - 1; out >= 0; out--) {
             Assert.assertEquals(new Long(randomArray[out]),stack.pop());
         }
     }
 
     @Test
     public void testPeek() {
-        Stack<Long> stack = new ArrayStack(TEST_STACK_SIZE);
-        long[] randomArray = super.randomArray(TEST_STACK_SIZE);
+        Stack<Long> stack = new ArrayStack(STACK_SIZE);
+        long[] randomArray = super.randomArray(STACK_SIZE);
         //push
         Arrays.stream(randomArray).forEach(stack::push);
 
         //assert peek stack top is unchance.
-        Assert.assertEquals(stack.peek(), Long.valueOf(randomArray[TEST_STACK_SIZE - 1]));
-        Assert.assertEquals(stack.peek(), Long.valueOf(randomArray[TEST_STACK_SIZE - 1]));
+        Assert.assertEquals(stack.peek(), Long.valueOf(randomArray[STACK_SIZE - 1]));
+        Assert.assertEquals(stack.peek(), Long.valueOf(randomArray[STACK_SIZE - 1]));
     }
 
     @Test(expected = IllegalStateException.class)
     public void testPushFail(){
-        Stack<Long> stack = new ArrayStack(TEST_STACK_SIZE);
+        Stack<Long> stack = new ArrayStack(STACK_SIZE);
         //push to full
-        Arrays.stream(super.randomArray(TEST_STACK_SIZE)).forEach(stack::push);
+        Arrays.stream(super.randomArray(STACK_SIZE)).forEach(stack::push);
         //stack is full
         stack.push(1L);
     }
@@ -58,13 +58,13 @@ public class ArrayStackTest extends BaseTest {
     @Test(expected = IllegalStateException.class)
     public void testPopFail() {
         //Empty stack do pop will be fail
-        new ArrayStack(TEST_STACK_SIZE).pop();
+        new ArrayStack(STACK_SIZE).pop();
     }
 
     @Test(expected = IllegalStateException.class)
     public void testPeekFail() {
         //Empty stack do peek will be fail
-        new ArrayStack(TEST_STACK_SIZE).peek();
+        new ArrayStack(STACK_SIZE).peek();
     }
 
 }
